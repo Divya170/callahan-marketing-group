@@ -1,0 +1,206 @@
+/* ===== Form fields (shared by the brief form and admin) ===== */
+.field {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  min-width: 0;
+}
+.field-row {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 22px;
+}
+.field-row > .field {
+  flex: 1 1 240px;
+}
+.label {
+  font-size: 15px;
+  font-weight: 600;
+}
+.label .opt {
+  font-weight: 400;
+  color: var(--muted);
+}
+.req {
+  color: var(--error);
+}
+.hint {
+  margin: 0;
+  font-size: 14px;
+  color: var(--muted);
+}
+.field-error {
+  margin: 0;
+  font-size: 14px;
+  color: var(--error);
+}
+.field-error:empty {
+  display: none;
+}
+.input,
+.select,
+.textarea {
+  min-height: 52px;
+  padding: 0 16px;
+  font: inherit;
+  font-size: 16px;
+  color: var(--ink);
+  background: var(--white);
+  border: 1.5px solid var(--field);
+  border-radius: 4px;
+  outline: none;
+  transition: border-color 0.2s, box-shadow 0.2s;
+  width: 100%;
+}
+.select {
+  padding: 0 14px;
+}
+.textarea {
+  padding: 14px 16px;
+  line-height: 1.55;
+  resize: vertical;
+  min-height: 150px;
+}
+.input:focus,
+.select:focus,
+.textarea:focus {
+  border-color: var(--violet);
+  box-shadow: 0 0 0 3px rgba(134, 91, 238, 0.28);
+}
+.input[aria-invalid='true'],
+.select[aria-invalid='true'],
+.textarea[aria-invalid='true'] {
+  border-color: var(--error);
+}
+.input--sm,
+.select--sm {
+  min-height: 44px;
+  font-size: 15px;
+  padding: 0 12px;
+}
+fieldset.fs {
+  border: 0;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 22px;
+  min-width: 0;
+}
+fieldset.fs + fieldset.fs,
+.fs-divider {
+  padding-top: 28px;
+  border-top: 1px solid var(--line);
+}
+.legend {
+  padding: 0;
+  margin-bottom: 18px;
+  font-family: var(--f-mono);
+  font-size: 12px;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: var(--violet);
+}
+.radio-pill {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  min-height: 48px;
+  padding: 0 18px;
+  border: 1.5px solid var(--rule);
+  background: var(--white);
+  border-radius: 100px;
+  cursor: pointer;
+  font-size: 15px;
+  font-weight: 500;
+}
+.radio-pill:has(input:checked) {
+  border-color: var(--violet);
+  background: var(--violet-tint);
+}
+.radio-pill:has(input:focus-visible) {
+  outline: 3px solid var(--lilac);
+  outline-offset: 3px;
+}
+.radio-pill input {
+  width: 18px;
+  height: 18px;
+  margin: 0;
+  accent-color: var(--violet);
+}
+.alert-error {
+  padding: 16px 18px;
+  border: 1.5px solid var(--error);
+  background: var(--error-bg);
+  color: var(--error-ink);
+  font-size: 15px;
+  line-height: 1.55;
+}
+.alert-soft {
+  padding: 14px 18px;
+  background: var(--error-bg);
+  color: var(--error-ink);
+  font-size: 15px;
+}
+.honeypot {
+  position: absolute;
+  left: -10000px;
+  width: 1px;
+  height: 1px;
+  overflow: hidden;
+}
+
+/* ===== Contact page ===== */
+.contact-layout {
+  padding-bottom: clamp(72px, 9vw, 128px);
+  display: flex;
+  flex-wrap: wrap;
+  gap: clamp(32px, 4vw, 56px);
+  align-items: flex-start;
+}
+.contact-aside {
+  flex: 1 1 300px;
+  max-width: 440px;
+  background: var(--ink);
+  color: var(--cream);
+  padding: clamp(28px, 3vw, 40px);
+  position: relative;
+  overflow: hidden;
+}
+.contact-aside a {
+  color: var(--cream);
+  font-size: 18px;
+  font-weight: 600;
+}
+.contact-aside a:hover {
+  color: var(--coral);
+}
+.contact-aside .k {
+  margin: 0 0 6px;
+  font-size: 13px;
+  color: var(--on-dark-muted);
+}
+.contact-card {
+  flex: 2 1 520px;
+  min-width: 0;
+  background: var(--white);
+  border: 1px solid var(--line);
+  padding: clamp(24px, 4vw, 56px);
+}
+@media (max-width: 760px) {
+  .contact-aside {
+    max-width: none;
+  }
+}
+.success-mark {
+  width: 72px;
+  height: 72px;
+  border-radius: 50%;
+  background: var(--success);
+  color: var(--white);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 32px;
+  font-weight: 700;
+}
